@@ -1,6 +1,6 @@
 #
 #	This file is part of the OrangeFox Recovery Project
-# 	Copyright (C) 2020-2023 The OrangeFox Recovery Project
+# 	Copyright (C) 2020-2024 The OrangeFox Recovery Project
 #
 #	OrangeFox is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -51,6 +51,9 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # device asserts
 TARGET_OTA_ASSERT_DEVICE := miatoll,curtana,excalibur,gram,joyeuse
+
+# frame rate
+TW_FRAMERATE := 90
 
 ifeq ($(FOX_VARIANT),FBEv2)
 
