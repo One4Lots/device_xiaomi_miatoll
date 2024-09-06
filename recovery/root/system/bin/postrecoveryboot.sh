@@ -1,7 +1,7 @@
-#!/sbin/sh
+#!/system/bin/sh
 #
 #	This file is part of the OrangeFox Recovery Project
-# 	Copyright (C) 2019-2023 The OrangeFox Recovery Project
+# 	Copyright (C) 2019-2024 The OrangeFox Recovery Project
 #
 #	OrangeFox is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -28,8 +28,8 @@ set_read_write_partitions() {
   local F=$(getprop "ro.orangefox.fastbootd");
   [ "$F" = "1" ] && return; # don't run this in fastbootd mode
 
-  local Parts=("system" "system_ext" "vendor" "product");
-  for i in "${Parts[@]}"
+  local Parts="system system_ext vendor product";
+  for i in $Parts
   do
      echo "I:OrangeFox: setting $i to read/write" >> /tmp/recovery.log;
      blockdev --setrw /dev/block/mapper/$i;
