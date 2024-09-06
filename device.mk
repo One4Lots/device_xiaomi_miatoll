@@ -53,8 +53,6 @@ PRODUCT_SOONG_NAMESPACES += \
 TARGET_OTA_ASSERT_DEVICE := miatoll,curtana,excalibur,gram,joyeuse
 
 ifeq ($(FOX_VARIANT),FBEv2)
-  # fscrypt policy
-   TW_USE_FSCRYPT_POLICY := 2
 
   # Enable project quotas and casefolding for emulated storage without sdcardfs
   $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
