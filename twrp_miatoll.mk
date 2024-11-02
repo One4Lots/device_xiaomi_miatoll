@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2019 The TwrpBuilder Open-Source Project
 #
-# Copyright (C) 2020-2023 OrangeFox Recovery Project
+# Copyright (C) 2020-2024 OrangeFox Recovery Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ PRODUCT_RELEASE_NAME := miatoll
 DEVICE_PATH := device/xiaomi/$(PRODUCT_RELEASE_NAME)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 # Inherit any OrangeFox-specific settings
