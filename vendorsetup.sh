@@ -1,6 +1,6 @@
 #
 #	This file is part of the OrangeFox Recovery Project
-# 	Copyright (C) 2020-2024 The OrangeFox Recovery Project
+# 	Copyright (C) 2020-2025 The OrangeFox Recovery Project
 #
 #	OrangeFox is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -41,11 +41,11 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_ASH_IS_BASH=1
 	export FOX_USE_TAR_BINARY=1
 	export FOX_USE_LZ4_BINARY=1
+	export FOX_USE_ZSTD_BINARY=1
 	export FOX_USE_XZ_UTILS=1
 	export FOX_ENABLE_APP_MANAGER=1
 	export FOX_DELETE_AROMAFM=1
-#	export FOX_USE_NANO_EDITOR=1
-	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v28.0.zip
+	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v28.1.zip
 
 	# FBEv2
 	if [ "$FOX_VARIANT" = "FBEv2" ]; then
