@@ -22,7 +22,9 @@
 # Wrappedkey fix script for FBEv2
 # Deal with situations where the ROM doesn't support wrappedkey encryption;
 # In such cases, remove the wrappedkey flag from the fstab file
-#
+
+exit 0;
+
 # the recovery log
 LOGF=/tmp/recovery.log;
 

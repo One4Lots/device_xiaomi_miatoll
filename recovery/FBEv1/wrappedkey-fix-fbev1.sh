@@ -19,6 +19,7 @@
 # 	Please maintain this if you use this script or any part of it
 #
 #
+exit 0;
 
 # wrappedkey fix script for FBEv1
 #
