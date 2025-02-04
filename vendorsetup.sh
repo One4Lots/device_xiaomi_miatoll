@@ -45,6 +45,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_XZ_UTILS=1
 	export FOX_ENABLE_APP_MANAGER=1
 	export FOX_DELETE_AROMAFM=1
+	export FOX_USE_DATE_BINARY=1
+	#export FOX_USE_BUSYBOX_BINARY=1
 	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v28.1.zip
 
 	# FBEv2
