@@ -75,4 +75,7 @@ OF_USE_LEGACY_TIME_FIXUP := 1
 
 # FRP
 OF_ENABLE_FRP_ADDON := 1
+
+# add dmctl
+OF_USE_DMCTL := 1
 #
