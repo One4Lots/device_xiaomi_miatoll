@@ -1,6 +1,6 @@
 #
 #	This file is part of the OrangeFox Recovery Project
-# 	Copyright (C) 2020-2024 The OrangeFox Recovery Project
+# 	Copyright (C) 2020-2026 The OrangeFox Recovery Project
 #
 #	OrangeFox is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ PRODUCT_SOONG_NAMESPACES += \
 TARGET_OTA_ASSERT_DEVICE := miatoll,curtana,excalibur,gram,joyeuse
 
 # frame rate
-TW_FRAMERATE := 90
+TW_FRAMERATE := 60
 
 ifeq ($(FOX_VARIANT),FBEv2)
 
@@ -84,7 +84,7 @@ PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USES_MKE2FS := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
