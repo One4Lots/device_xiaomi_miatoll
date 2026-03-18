@@ -49,6 +49,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_BUSYBOX_BINARY=1
 	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v30.7.zip
 
+	export FOX_SETTINGS_ROOT_DIRECTORY=/data/recovery
+	export FOX_MISCELLANEOUS_ROOT_DIRECTORY=/sdcard
+
 	# FBEv2
 	if [ "$FOX_VARIANT" = "FBEv2" ]; then
 		export FOX_VANILLA_BUILD=1
