@@ -26,7 +26,6 @@ OF_STATUS_H := 108
 OF_STATUS_INDENT_LEFT := 48
 OF_STATUS_INDENT_RIGHT := 48
 OF_CLOCK_POS := 1
-
 OF_USE_GREEN_LED := 0
 OF_HIDE_NOTCH := 1
 OF_DONT_PATCH_ENCRYPTED_DEVICE := 1
@@ -78,4 +77,9 @@ OF_ENABLE_FRP_ADDON := 1
 
 # add dmctl
 OF_USE_DMCTL := 1
+
+# don't keep log history - only use for Stable releases
+ifeq ($(FOX_BUILD_TYPE),Stable)
+   OF_DONT_KEEP_LOG_HISTORY := 1
+endif
 #
