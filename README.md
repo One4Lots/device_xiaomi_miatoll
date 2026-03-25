@@ -23,13 +23,13 @@
 ## Kernels
 - [FBE v1](https://github.com/Klozz/android_kernel_xiaomi_sm6250)
 
-- [FBE v2](https://github.com/c0smic-Lab/kernel_xiaomi_sm6250.git)
+- [FBE v2](https://github.com/RiteshSahany/kernel_xiaomi_sm6250.git)
 
 ---
 ## Copyright notice
  ```
   /*
-  *  Copyright (C) 2020-2025 The OrangeFox Recovery Project
+  *  Copyright (C) 2020-2026 The OrangeFox Recovery Project
   *
   * This program is free software: you can redistribute it and/or modify
   * it under the terms of the GNU General Public License as published by
