@@ -18,24 +18,26 @@
 #
 # 	Please maintain this if you use this script or any part of it
 #
+
 DEBUG=0;
 [ "$DEBUG" = "1" ] && set -o xtrace;
 
-LOGMSG() {
-	echo "I:$*" >> /tmp/recovery.log;
-}
-
-fix_sdcard_folders() {
-local D=/sdcard/Fox; # /sdcard/Fox folder
-	if [ -d $D ]; then
-		LOGMSG "Correcting SELinux context and ownership of the $D folder...";
-		chown -R media_rw:media_rw $D;
-		chcon -R u:object_r:media_rw_data_file:s0 $D;
-	fi
+fix_fox_folders_permissions_contexts() {
+local fox_folders="/sdcard/Fox /data/recovery/Fox /persist/Fox";
+local D;
+	for D in $fox_folders
+	do
+		if [ -d $D ]; then
+			echo "I:Correcting the SELinux context and permissions of the $D folder..." >> /tmp/recovery.log;
+			chcon -R u:object_r:media_rw_data_file:s0 $D;
+			chown -R media_rw:media_rw $D;
+			chmod -R 0777 $D;
+		fi
+	done
 	sync;
 }
 
 # ---
-fix_sdcard_folders;
+fix_fox_folders_permissions_contexts;
 exit 0;
 #
