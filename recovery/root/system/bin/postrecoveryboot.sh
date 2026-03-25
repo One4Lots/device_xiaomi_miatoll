@@ -25,9 +25,6 @@
 
 # requires bash
 set_read_write_partitions() {
-  local F=$(getprop "ro.orangefox.fastbootd");
-  [ "$F" = "1" ] && return; # don't run this in fastbootd mode
-
   local Parts="system system_ext vendor product";
   for i in $Parts
   do
@@ -36,32 +33,11 @@ set_read_write_partitions() {
   done
 }
 
-# prune historic logs
-prune_historic_logs() {
-local FOX_HOME=$(getprop "ro.orangefox.home");
-local FOX_SETTINGS=$(getprop "ro.orangefox.settings");
-local days="$1"; # number of days before we start pruning historic logs
-
-	[ -z "$FOX_HOME" ] && FOX_HOME=/sdcard/Fox; # default
-	[ -z "$FOX_SETTINGS" ] && FOX_SETTINGS=/sdcard/Fox; # default
-	[ -z "$days" ] && days=14; # default
-	local D="/sdcard/Fox/logs"; # default
-	local D1=$FOX_HOME/logs;
-	local D2=$FOX_SETTINGS/logs;
-	if [ -d $D1 ]; then # home dir
-		D=$D1;
-	elif [ -d $D2 ]; then # settings dir
-		D=$D2;
-	fi
-
-	# look only for the historic log zip files
-	find "$D" -name "recovery*.zip" -maxdepth 1 -type f -mtime +$days -print -delete;
-}
-
-# ---
-set_read_write_partitions;
-
-prune_historic_logs "7";
-
+# --- #
+F=$(getprop "ro.orangefox.fastbootd"); # don't run this in fastbootd mode
+if [ "$F" != "1" ]; then
+	set_read_write_partitions;
+	/sbin/prune_historic_logs.sh "7";
+fi
 exit 0;
 #
