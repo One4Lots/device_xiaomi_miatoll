@@ -1,7 +1,7 @@
 #
 # Copyright (C) 2019 The TwrpBuilder Open-Source Project
 #
-# Copyright (C) 2020-2023 OrangeFox Recovery Project
+# Copyright (C) 2020-2026 OrangeFox Recovery Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-2a
+TARGET_ARCH_VARIANT := armv8-2a-dotprod
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a76
