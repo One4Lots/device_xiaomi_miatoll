@@ -29,9 +29,9 @@ local D;
 	do
 		if [ -d $D ]; then
 			echo "I:Correcting the SELinux context and permissions of the $D folder..." >> /tmp/recovery.log;
-			chcon -R u:object_r:media_rw_data_file:s0 $D;
 			chown -R media_rw:media_rw $D;
 			chmod -R 0777 $D;
+			chcon -R u:object_r:media_rw_data_file:s0 $D;
 		fi
 	done
 	sync;
